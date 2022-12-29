@@ -4,9 +4,9 @@ RSpec.describe 'landing Page', type: :feature do
   describe 'As a User' do
     describe 'When I visit the Landing Page' do
       before(:each) do
-        @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com')
-        @user2 = User.create!(name: 'Larry', email: 'larry@hotmail.com')
-        @user3 = User.create!(name: 'Sherri', email: 'sherri@aol.com')
+        @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com', password: 'password123', password_confirmation: 'password123')
+        @user2 = User.create!(name: 'Larry', email: 'larry@hotmail.com', password: 'password123', password_confirmation: 'password123')
+        @user3 = User.create!(name: 'Sherri', email: 'sherri@aol.com', password: 'password123', password_confirmation: 'password123')
 
         visit root_path
       end
