@@ -25,9 +25,12 @@ class UsersController < ApplicationController
 
   def login_user
     # require "pry"; binding.pry
-    user = User.find_by(email: "email@example.com")
-    if user.authenticate(params[:password])
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
       redirect_to user_path(user)
+    else
+      redirect_to login_path
+      flash[:alert] = "Bad credentials"
     end
   end
 
